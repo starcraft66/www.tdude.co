@@ -215,7 +215,7 @@ Success for `docker`, that is... There are a bunch of additional gotchas that ne
 
 The biggest gotcha right off the bat is that according to the [docker-compose v3 file format documentation](https://docs.docker.com/compose/compose-file/), "If IPv6 addressing is desired, the `enable_ipv6` option must be set, and you must use a version 2.x Compose file". That's right, docker-compose v3 is completely incompatible with IPv6... anyway so we want to start out with a version "2.x" configuration file like this one.
 
-```yaml
+```
 version: 2
 networks:
   demo:
@@ -224,7 +224,7 @@ networks:
 
 Because docker-compose files define their own network for the containers to use, traffic does not flow through the `docker0` bridge we configured above so the `fixed-cidr-v6` we configured in the docker daemon's configuration file will be ignored. Instead of using `docker0`, docker-compose creates a new bridge with a random name by default which the containers using that network are then a part of. This means we need to choose a new /80 subnet for the containers defined in this compose file. For this demonstration I will choose `2001:db8:dead:beef:f00d::/80`, and since the gateway is usually the first network on the subnet I will use `2001:db8:dead:beef:f00d::1/80` as the gateway. Once these parameters are added to the driver's ipam config, our compose file will look like this.
 
-```yaml
+```
 version: 2
 networks:
   demo:
@@ -238,7 +238,7 @@ networks:
 
 We can see immediately that a randomly-generated bridge name will be problematic: we won't be able to predict its name when we add it to `ndppd.conf`. To work around this, it is possible to set the `com.docker.network.bridge.name` option on the bridge network driver to give it a name which for this demonstration will be called `br-demo`. Our compose file then looks like this.
 
-```yaml
+```
 version: 2
 networks:
   demo:
@@ -255,7 +255,7 @@ networks:
 
 It's quite possible you'll probably also want IPv4 networking for your containers so I went and added a random free subnet in `172.16.0.0/12`.
 
-```yaml
+```
 version: 2
 networks:
   demo:
@@ -274,7 +274,7 @@ networks:
 
  I mentioned `ndppd.conf` because, just like we did with `bridge0`, we need to add an entry for `br-demo` in `/etc/ndppd.conf` under the same host network interface as we put docker0. This is what my config now looks like.
 
- ```
+```
 proxy eno1 {
     rule 2001:db8:dead:beef:face::/80 {
         iface docker0
@@ -287,7 +287,7 @@ proxy eno1 {
 
 Almost done! The last step is to add some container(s) to your docker-compose file and assign them static IPv6 (and IPv4 if desired) addresses, here's my final IPv6-capable docker-compose file with an nginx instance! 
 
-```yaml
+```
 version: 2
 services:
   nginx:
