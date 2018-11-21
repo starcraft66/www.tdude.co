@@ -17,3 +17,7 @@ My old website accumulated a lot of technical debt in the sense that nothing was
 For the new site I decided to go with the [Hugo](https://gohugo.io) static site generator simply because I know other people using it and it works great. I actually had some trouble installing hugo on my ubuntu machine because it is developed at a rapid pace and the ubuntu packages for `cosmic` are already too out of date for my needs but everything is running smoothly with the hugo snapcraft package now! Other than that, it uses the [hyde-hyde](https://github.com/htr3n/hyde-hyde) theme and is automatically deployed using [Ansible](https://ansible.com) and [GitLab CI](https://about.gitlab.com/product/continuous-integration/).
 
 The source code for the entire website is avaiable on my [GitHub](https://github.com/starcraft66/www.tdude.co)!
+
+### Archival of the old site
+
+Of course, for archival purposes, the contents of the old site are available on [https://legacy.tdude.co](https://legacy.tdude.co).
