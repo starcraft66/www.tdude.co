@@ -18,7 +18,7 @@ paginate = 5
 [params]
     author = "Tristan"
     title = "TDUDE.CO"
-    copyright = "&copy; 2018 Tristan Gosselin-Hane<br/>MIT Licensed<br/>Built with <a href=\"https://gohugo.io\">Hugo</a> and <a href=\"https://github.com/htr3n/hyde-hydei\">hyde-hyde</a>."
+    copyright = "&copy; 2018 Tristan Gosselin-Hane<br/>MIT Licensed<br/>Built with <a href=\"https://gohugo.io\">Hugo</a> and <a href=\"https://github.com/htr3n/hyde-hyde\">hyde-hyde</a>."
     # description = "..."
     authorimage = "/img/DSC03343.jpg"
     themeColor = "theme-base-0d"
