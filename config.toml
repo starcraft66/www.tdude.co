@@ -1,0 +1,60 @@
+baseurl = "https://www.tdude.co/"
+
+languageCode = "en"
+
+title = "TDUDE"
+theme = "hyde-hyde"
+
+## Hugo Built-in Features
+# disqusShortname = "your-disqus-shortname"
+# googleAnalytics = "your-google-analytics-id"
+# enableRobotsTXT = true
+
+summarylength = 30
+
+paginate = 5
+
+## Site Settings
+[params]
+    author = "Tristan"
+    title = "TDUDE.CO"
+    copyright = "&copy; 2018 Tristan Gosselin-Hane<br/>MIT Licensed<br/>Built with <a href=\"https://gohugo.io\">Hugo</a> and <a href=\"https://github.com/htr3n/hyde-hydei\">hyde-hyde</a>."
+    # description = "..."
+    authorimage = "/img/DSC03343.jpg"
+    themeColor = "theme-base-0d"
+    dateformat = "Jan 2, 2006"
+    highlightjs = true
+    highlightjsstyle = "github"
+    # please choose either GraphComment or Disqus or Utterances
+    #GraphCommentId = "..."
+    #UtterancesRepo = "..." # https://utteranc.es/
+    #UtterancesIssueTerm = "..." # pathname, url, title, og:title
+    #UtterancesTheme = "..." # github-light or github-dark
+    
+    # Table of contents
+    #toc = none, "hugo", or "tocbot"
+
+## Social Accounts
+[params.social]
+    github = "starcraft66"
+    linkedin = "tdude"
+    twitter = "eltdude"
+    email = "starcraft66@gmail.com"
+
+## Main Menu
+
+[[menu.main]]
+    name = "Posts"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+[[menu.main]]
+    name = "Projects"
+    identifier = "portfolio"
+    weight = 200
+    url = "/projects/"
+[[menu.main]]
+    name = "About"
+    identifier = "about"
+    weight = 300
+    url = "/about/"

@@ -1,0 +1,14 @@
+stages:
+  - deploy
+
+deploy:prod:
+  stage: deploy
+  image: williamyeh/ansible:ubuntu18.04
+  tags:
+    - ansible
+  script:
+    - 'chmod -R 750 ansible'
+    - 'cd ansible'
+    - 'ansible-playbook --private-key=/id_rsa site.yml'
+  only:
+    - master

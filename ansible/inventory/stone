@@ -1,0 +1,2 @@
+[stone]
+stone ansible_host=stone.tdude.co ansible_user=deploy ansible_ssh_common_args='-o StrictHostKeyChecking=no'
