@@ -4,7 +4,7 @@ date: 2018-11-21T11:08:42-05:00
 ---
 
 As of recent years, I have been playing around with [Docker](https://docker.com) quite a bit and use it in production to run quite a few services.
-So far, in every docker deployment, I have done, I have only used IPv4, however, now that IPv6 is gaining a lot of traction I thought it would be a good idea to make all of my docker services accessible via IPv6!
+So far, in every docker deployment I have done, I have only used IPv4. However, now that IPv6 is gaining a lot of traction I thought it would be a good idea to make all of my docker services accessible via IPv6!
 For about 8 months now I have been running a [[matrix]](https://matrix.org) chat server using docker. The server has so far attracted about 100 users around the globe and I thought it would be a good idea to make this service more accessible to users stuck behind an IPv4 [Carrier-Grade NAT (CG-NAT)](https://en.wikipedia.org/wiki/Carrier-grade_NAT) or to users using a [translation mechanism](https://en.wikipedia.org/wiki/IPv6_transition_mechanism) such as [NAT64](https://en.wikipedia.org/wiki/NAT64) to access the IPv4 internet over IPv6 networks.
 
 Now, of course, to provide an IPv6-accessible service, we need a server with IPv6 internet access. I am a long time OVH customer and am glad that they offer IPv6 connectivity to most if not all of the servers they sell. Although I am a bit unhappy with the small number of addresses they provide, I've had a mostly positive experience with OVH in general.
@@ -119,13 +119,13 @@ fe80::/64 dev eth0  proto kernel  metric 256  pref medium
 default via 2001:db8:dead:beef:face::1 dev eth0  metric 1024  pref medium
 ```
 
-As we can see, the container's network interface has the MAC address `02:42:ac:11:00:03` and therefore it has been allocated the ip address `2001:db8:dead:beef:face:242:ac11:3`. Additionally, it has a default route via `2001:db8:dead:beef:face::1` which goes through a docker-created bridge. It looks like we're done, right? Our containers have an IPv6 address and we can even ping them! Not so fast... While we can ping docker0 and any created containers from the docker host machine, this only works because our local routing table knows how to route this traffic to docker. If you try pinging `2001:db8:dead:beef:face::1` from the exterior, it won't work at all!
+As we can see, the container's network interface has the MAC address `02:42:ac:11:00:03` and therefore it has been allocated the ip address `2001:db8:dead:beef:face:242:ac11:3`. Additionally, it has a default route via `2001:db8:dead:beef:face::1` which goes through a docker-created bridge. It looks like we're done, right? Our containers have an IPv6 address and we can even ping them! Not so fast... While we can ping docker0 and any created containers from the docker host machine, this only works because our local routing table knows how to route this traffic to docker. If you try pinging `2001:db8:dead:beef:face:242:ac11:3` from the exterior, it won't work at all!
 
 ```
-$ ping6 2001:db8:dead:beef:face::1
-PING 2001:db8:dead:beef:face::1(2001:db8:dead:beef:face::1) 56 data bytes
+$ ping6 2001:db8:dead:beef:face:242:ac11:3
+PING 2001:db8:dead:beef:face:242:ac11:3(2001:db8:dead:beef:face:242:ac11:3) 56 data bytes
 ^C
---- 2001:db8:dead:beef:face::1 ping statistics ---
+--- 2001:db8:dead:beef:face:242:ac11:3 ping statistics ---
 7 packets transmitted, 0 received, 100% packet loss, time 6125ms
 ```
 
