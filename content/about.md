@@ -3,7 +3,7 @@ title = "About Tristan"
 date = "2018-11-17T01:15:40-05:00"
 +++
 
-Hello! I'm Tristan Gosselin-Hane, a software developer and  IT professional studying and living in my home towon of Montreal, Canada.
+Hello! I'm Tristan Gosselin-Hane, a software developer and  IT professional studying and living in my home town of Montreal, Canada.
 
 Student by day and hacker by night (or something like that anyway...).
 
