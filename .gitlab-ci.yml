@@ -3,10 +3,11 @@ stages:
 
 deploy:prod:
   stage: deploy
-  image: williamyeh/ansible:ubuntu18.04
+  image: python:3
   tags:
     - ansible
   script:
+    - 'pip install ansible'
     - 'chmod -R 750 ansible'
     - 'cd ansible'
     - 'ansible-playbook --private-key=/id_rsa site.yml'
