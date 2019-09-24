@@ -1,12 +1,9 @@
 ---
-# Coming in Ansible 2.8...
-#- name: Install/Update Hugo
-#  snap:
-#    name: "hugo"
-#    channel: "extended/stable"
-#    state: present
 - name: Install/Update Hugo
-  command: "sudo /usr/bin/snap install hugo --channel=extended/stable"
+  snap:
+    name: "hugo"
+    channel: "extended/stable"
+    state: present
 
 - name: Clear the old temporary folder
   file:
