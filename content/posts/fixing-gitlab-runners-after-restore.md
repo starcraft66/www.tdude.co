@@ -68,12 +68,12 @@ table_column_combos.each do |table,column,column2|
       if data[column2].to_s.empty?
         puts "Bad Value column2 is empty: #{data[column]}"
         data[column] = nil
-        #data.save()
+        data.save()
         removed += 1
       else
         puts "Bad Value: #{data[column]}"
         data[column] = ::Gitlab::CryptoHelper.aes256_gcm_encrypt(data[column2])
-        #data.save()
+        data.save()
         fixed += 1
       end
       bad << data
