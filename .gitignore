@@ -1,2 +1,6 @@
 public/
 resources/
+
+# nix
+.direnv
+result
