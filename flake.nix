@@ -16,6 +16,7 @@
           src = ./.;
           buildPhase = ''
             mkdir -p themes
+            rm -rf themes/hyde-hyde
             ln -s ${hugo-theme-hyde-hyde} themes/hyde-hyde
             ${pkgs.hugo}/bin/hugo --minify
           '';
