@@ -1,6 +1,0 @@
----
-- hosts: stone
-  connection: ssh
-
-  roles:
-    - hugo

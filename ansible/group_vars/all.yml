@@ -1,4 +1,0 @@
----
-# Work around snapcraft sandbox
-tmp_dir: "/home/deploy/hugo_tmp"
-webroot: "/var/www/html/www.tdude.co"
