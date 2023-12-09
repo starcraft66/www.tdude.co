@@ -1,15 +1,8 @@
 stages:
-  - deploy
+- build
 
-deploy:prod:
-  stage: deploy
-  image: python:3
-  tags:
-    - ansible
+build:
+  stage: build
+  image: nixpkgs/nix
   script:
-    - 'pip install ansible'
-    - 'chmod -R 750 ansible'
-    - 'cd ansible'
-    - 'ansible-playbook --private-key=/id_rsa site.yml'
-  only:
-    - master
+  - 'nix --experimental-features "nix-command flakes" build .#tdude-website'
