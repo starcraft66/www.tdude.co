@@ -21,15 +21,16 @@
     "hugo-theme-hyde-hyde": {
       "flake": false,
       "locked": {
-        "lastModified": 1711233330,
-        "narHash": "sha256-s+TwaUZU7ufGRb3qaMCI+p8e3Znwme1Q7X1d2n/QPm8=",
-        "owner": "htr3n",
+        "lastModified": 1733364146,
+        "narHash": "sha256-0V+I6P7UE23MHTXnHQTNOIXyqpxLEPbr/aCg7As4oYs=",
+        "owner": "starcraft66",
         "repo": "hyde-hyde",
-        "rev": "83fead65ec584bc974d46f056fdef6e74fe991de",
+        "rev": "2c5f95b72c93ad332de84637c7877d53d305e721",
         "type": "github"
       },
       "original": {
-        "owner": "htr3n",
+        "owner": "starcraft66",
+        "ref": "feature/tgh/fix-hugo-deprecations",
         "repo": "hyde-hyde",
         "type": "github"
       }

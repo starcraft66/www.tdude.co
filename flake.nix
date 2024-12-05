@@ -3,7 +3,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   inputs.flake-parts.url = "github:hercules-ci/flake-parts";
   inputs.hugo-theme-hyde-hyde = {
-    url = "github:htr3n/hyde-hyde";
+    url = "github:starcraft66/hyde-hyde/feature/tgh/fix-hugo-deprecations";
     flake = false;
   };
 
